@@ -1,0 +1,14 @@
+{
+  "country": "JP",
+  "orgName": "Canon",
+  "adminEmail": "guozhh2001@gmail.com",
+  "edition": "Developer",
+  "settings": {
+    "securitySettings": {
+        "passwordPolicies": {
+            "enableSetPasswordInApi": true
+        }
+    }
+  },
+  "features": []
+}
