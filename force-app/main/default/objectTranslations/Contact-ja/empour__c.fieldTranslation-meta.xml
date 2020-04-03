@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 正社員責任者 --></label>
+    <name>empour__c</name>
+    <relationshipLabel><!-- 協力社員一覧 --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>社員</value>
+    </caseValues>
+    <layouts>
+        <layout>協力社員</layout>
+        <sections>
+            <label><!-- カスタムリンク --></label>
+            <section>カスタムリンク</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- 一般社員 --></label>
+        <name>commonEmp</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- 協力社員 --></label>
+        <name>partneremp</name>
+    </recordTypes>
+</CustomObjectTranslation>

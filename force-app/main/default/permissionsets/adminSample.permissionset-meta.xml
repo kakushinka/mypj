@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>管理者開発サンプル権限</label>
+    <pageAccesses>
+        <apexPage>DemoPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>jQueryMobileResources</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+</PermissionSet>

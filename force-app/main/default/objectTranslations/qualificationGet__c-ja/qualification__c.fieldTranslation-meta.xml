@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 資格 --></label>
+    <name>qualification__c</name>
+    <relationshipLabel><!-- 取得資格 --></relationshipLabel>
+</CustomFieldTranslation>
