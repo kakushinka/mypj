@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>GetQuaEmail</fullName>
+        <description>資格取得のお知らせ</description>
+        <protected>false</protected>
+        <recipients>
+            <field>emp__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>jinjiFold/CongratulationShikaku</template>
+    </alerts>
+    <rules>
+        <fullName>GetNewQuaMail</fullName>
+        <actions>
+            <name>GetQuaEmail</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>qualificationGet__c.Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>
