@@ -55,6 +55,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>qualificationSum__c.qualificationCnt__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>qualification__c.qualificationType__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -73,6 +78,9 @@
         <layout>qualificationGet__c-取得資格レイアウト</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>qualificationSum__c-資格統計レイアウト</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>qualification__c-資格レイアウト</layout>
     </layoutAssignments>
     <objectPermissions>
@@ -82,6 +90,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>qualificationGet__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>qualificationSum__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -113,6 +130,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>qualificationGet__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>qualificationSum__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

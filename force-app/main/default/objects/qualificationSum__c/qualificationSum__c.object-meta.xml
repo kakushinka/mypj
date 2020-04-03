@@ -153,15 +153,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>資格</label>
+    <label>資格統計</label>
     <nameField>
         <displayFormat>{0000}</displayFormat>
-        <label>資格名</label>
+        <label>資格統計名</label>
         <type>AutoNumber</type>
     </nameField>
-    <searchLayouts>
-        <lookupDialogsAdditionalFields>qualificationName__c</lookupDialogsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Read</sharingModel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
