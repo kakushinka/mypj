@@ -1,14 +1,7 @@
 {
   "country": "JP",
-  "orgName": "Canon",
+  "orgName": "CanonTest",
   "adminEmail": "guozhh2001@gmail.com",
   "edition": "Developer",
-  "settings": {
-    "securitySettings": {
-        "passwordPolicies": {
-            "enableSetPasswordInApi": true
-        }
-    }
-  },
   "features": []
 }
