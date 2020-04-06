@@ -7,6 +7,9 @@ package.xml
 # LWC configuration files
 **/jsconfig.json
 **/.eslintrc.json
+*SessionSetting*
+*PasswordPolicy*
+
 
 # LWC Jest
 **/__tests__/**
