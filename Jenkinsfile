@@ -44,12 +44,12 @@ node {
 		// -------------------------------------------------------------------------
 
 		stage('Deploy and Run Tests') {
-		    rc = command "${toolbelt}/sfdx force:mdapi:deploy --wait 10 --deploydir ${DEPLOYDIR} --targetusername CanonTest --testlevel ${TEST_LEVEL}"
+		    //rc = command "${toolbelt}/sfdx force:mdapi:deploy --wait 10 --deploydir ${DEPLOYDIR} --targetusername CanonTest --testlevel ${TEST_LEVEL}"
+			rc = command "${toolbelt}/sfdx force:source:push"
 		    if (rc != 0) {
 			error 'Salesforce deploy and test run failed.'
 		    }
 		}
-
 
 		// -------------------------------------------------------------------------
 		// Example shows how to run a check-only deploy.
