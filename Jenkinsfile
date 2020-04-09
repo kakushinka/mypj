@@ -42,7 +42,7 @@ node {
 			error 'Salesforce org authorization failed.'
 		    }
 			
-			rmsg = command "${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+            rmsg = bat returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
 			def robj = new JsonSlurperClassic().parseText(rmsg)
 			if (robj.status != 0) { error 'org creation failed: ' + robj.message }
 			SFDC_USERNAME=robj.result.username
