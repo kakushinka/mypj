@@ -7,8 +7,9 @@ node {
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
     def DEPLOYDIR='force-app'
     def TEST_LEVEL='RunLocalTests'
-    def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://test.salesforce.com"
+    def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://login.salesforce.com"
     def toolbelt = tool 'sfdxtool'
+	def SFDC_USERNAME
 
     // -------------------------------------------------------------------------
     // Check out code from source control.
@@ -41,31 +42,24 @@ node {
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
+
+			rmsg = command "${toolbelt}/sfdx force::org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+			printf rmsg
+			def jsonSlurper = new JsonSlurperClassic()
+			def robj = jsonSlurper.parseText(rmsg)
+			if (robj.status != 0) { error 'org creation failed: ' + robj.message }
+			SFDC_USERNAME=robj.result.username
+			robj = null
 		}
 
+		stage('Push To Test Org') {
+            rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SFDC_USERNAME}"
+            if (rc != 0) {
+                error 'push failed'
+            }
+        }
 
-		// -------------------------------------------------------------------------
-		// Deploy metadata and execute unit tests.
-		// -------------------------------------------------------------------------
 
-		stage('Deploy and Run Tests') {
-		    //rc = command "${toolbelt}/sfdx force:mdapi:deploy --wait 10 --deploydir ${DEPLOYDIR} --targetusername CanonTest --testlevel ${TEST_LEVEL}"
-			rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SF_USERNAME}"
-		    if (rc != 0) {
-			error 'Salesforce deploy and test run failed.'
-		    }
-		}
-
-		// -------------------------------------------------------------------------
-		// Example shows how to run a check-only deploy.
-		// -------------------------------------------------------------------------
-
-		//stage('Check Only Deploy') {
-		//    rc = command "${toolbelt}/sfdx force:mdapi:deploy --checkonly --wait 10 --deploydir ${DEPLOYDIR} --targetusername UAT --testlevel ${TEST_LEVEL}"
-		//    if (rc != 0) {
-		//        error 'Salesforce deploy failed.'
-		//    }
-		//}
 	    }
 	}
 }
