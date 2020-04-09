@@ -18,7 +18,6 @@ node {
     stage('checkout source') {
         checkout scm
     }
-
     // -------------------------------------------------------------------------
     // Run all the enclosed stages with access to the Salesforce
     // JWT key credentials.
