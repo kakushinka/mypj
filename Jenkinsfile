@@ -33,7 +33,6 @@ node {
 
 		stage('Authorize to Salesforce') {
 			rc = command "${toolbelt}/sfdx force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --jwtkeyfile C:/PJ/certificates/server.key --username ${SF_USERNAME} --setalias CanonTest"
-		    rc = command "${toolbelt}/sfdx force:config:set defaultusername=${SF_USERNAME}"
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
@@ -46,7 +45,7 @@ node {
 
 		stage('Deploy and Run Tests') {
 		    //rc = command "${toolbelt}/sfdx force:mdapi:deploy --wait 10 --deploydir ${DEPLOYDIR} --targetusername CanonTest --testlevel ${TEST_LEVEL}"
-			rc = command "${toolbelt}/sfdx force:source:push"
+			rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SF_USERNAME}"
 		    if (rc != 0) {
 			error 'Salesforce deploy and test run failed.'
 		    }
