@@ -42,7 +42,6 @@ node {
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
-
 			rmsg = command "${toolbelt}/sfdx force::org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
 			printf rmsg
 			def jsonSlurper = new JsonSlurperClassic()
