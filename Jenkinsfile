@@ -55,7 +55,7 @@ node {
 		}
 
 		stage('Push To Test Org') {
-            rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SF_USERNAME}"
+            rc = command "${toolbelt}/sfdx force:source:push -f --targetusername ${SF_USERNAME}"
             if (rc != 0) {
                 error 'push failed'
             }
