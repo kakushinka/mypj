@@ -44,9 +44,13 @@ node {
             rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
 			println("stdout ################ " + rmsg + " ####################")
             def js = new JsonSlurperClassic()
+            println("stdout ################ " + rmsg + " ####################")
             def robj = js.parseText(rmsg)
+            println("stdout ################ " + rmsg + " ####################")
 			if (robj.status != 0) { error 'org creation failed: ' + robj.message }
+            println("stdout ################ " + rmsg + " ####################")
 			SFDC_USERNAME=robj.result.username
+            println("stdout ################ " + rmsg + " ####################")
 			robj = null
 		}
 
