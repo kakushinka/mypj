@@ -1,5 +1,4 @@
 #!groovy
-@Grab(group='org.yaml', module='snakeyaml', version='1.19')
 import groovy.json.JsonSlurperClassic
 node {
 
@@ -38,12 +37,12 @@ node {
             }else{
                  rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyfile \"${server_key_file}\" --setdefaultdevhubusername --instanceurl ${SF_INSTANCE_URL}"
             }*/            
-			rc = command "${toolbelt}/sfdx force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --jwtkeyfile C:/PJ/certificates/server.key --username ${SF_USERNAME} --setdefaultdevhubusername"
+			rc = command "${toolbelt}/sfdx force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --jwtkeyfile C:/PJ/certificates/server.key --username ${SF_USERNAME} --setdefaultusername"
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
 
-            def rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
+            /*def rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
 			println("stdout ################ " + rmsg + " ####################")
             def robj = new JsonSlurperClassic().parseText(rmsg)
             println("stdout ################ " + rmsg + " ####################")
@@ -52,10 +51,11 @@ node {
 			SFDC_USERNAME=robj.result.username
             println("stdout ################ " + rmsg + " ####################")
 			robj = null
+            */
 		}
 
 		stage('Push To Test Org') {
-            rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SFDC_USERNAME}"
+            rc = command "${toolbelt}/sfdx force:source:push --targetusername ${SF_USERNAME}"
             if (rc != 0) {
                 error 'push failed'
             }
