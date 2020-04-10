@@ -11,6 +11,8 @@ package.xml
 *PasswordPolicy*
 **/Default_mysite.audience-meta.xml
 **/Default_Navigation.navigationMenu-meta.xml
+**/qualist.reportFolder-meta.xml
+**/AppSwitcher.appMenu-meta.xml
 
 
 # LWC Jest
