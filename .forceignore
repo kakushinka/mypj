@@ -10,6 +10,7 @@ package.xml
 *SessionSetting*
 *PasswordPolicy*
 **/Default_mysite.audience-meta.xml
+**/Default_Navigation.navigationMenu-meta.xml
 
 
 # LWC Jest
