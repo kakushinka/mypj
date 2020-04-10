@@ -42,6 +42,7 @@ node {
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
+            
             rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
 			println("stdout ################ " + rmsg + " ####################")
             def robj = new JsonSlurper().parseText(rmsg)
