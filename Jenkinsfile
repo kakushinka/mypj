@@ -1,9 +1,8 @@
 #!groovy
 import groovy.json.JsonSlurperClassic
 node {
-
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
-    def SF_USERNAME=env.SF_USERNAME
+    def SF_USERNAME=env.SF_US   ERNAME
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
     def DEPLOYDIR='force-app'
     def TEST_LEVEL='RunLocalTests'
