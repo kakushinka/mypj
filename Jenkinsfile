@@ -1,6 +1,5 @@
 #!groovy
-import groovy.json.JsonOutput
-import groovy.json.JsonSlurper
+import groovy.json.JsonSlurperClassic
 node {
 
     def SF_CONSUMER_KEY=env.SF_CONSUMER_KEY
@@ -42,10 +41,10 @@ node {
 			if (rc != 0) {
 			error 'Salesforce org authorization failed.'
 		    }
-            
-            rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
+
+            def rmsg = bat(returnStdout: true, script:"${toolbelt}/sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername")
 			println("stdout ################ " + rmsg + " ####################")
-            def robj = new JsonSlurper().parseText(rmsg)
+            def robj = new JsonSlurperClassic().parseText(rmsg)
             println("stdout ################ " + rmsg + " ####################")
 			if (robj.status != 0) { error 'org creation failed: ' + robj.message }
             println("stdout ################ " + rmsg + " ####################")
