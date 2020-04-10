@@ -1,4 +1,5 @@
 #!groovy
+@Grab(group='org.yaml', module='snakeyaml', version='1.19')
 import groovy.json.JsonSlurperClassic
 node {
 
