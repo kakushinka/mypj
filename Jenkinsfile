@@ -10,7 +10,7 @@ node {
     def toolbelt = tool 'sfdxtool'
 	def SFDC_USERNAME
     // -------------------------------------------------------------------------
-    // Check out code from source control.
+    // Check out code from source control
     // -------------------------------------------------------------------------
 
     stage('checkout source') {

@@ -23,9 +23,9 @@
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>test-9j49y3sx3p9x@example.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>test-9j49y3sx3p9x@example.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>test-mgnsmpohrb9n@example.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>test-mgnsmpohrb9n@example.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>mypj-developer-edition</subdomain>
+    <subdomain>mycm-developer-edition</subdomain>
     <urlPathPrefix>mysite</urlPathPrefix>
 </CustomSite>

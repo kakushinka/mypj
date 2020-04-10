@@ -65,11 +65,11 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>empManage</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>mysite</name>
         <type>Network</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>empManage</name>
+        <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>
