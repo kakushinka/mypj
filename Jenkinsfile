@@ -5,16 +5,14 @@ node {
     def SF_USERNAME=env.SF_USERNAME
     def SERVER_KEY_CREDENTIALS_ID=env.SERVER_KEY_CREDENTIALS_ID
     def DEPLOYDIR='force-app'
-
-    
     def TEST_LEVEL='RunLocalTests'
     def SF_INSTANCE_URL = env.SF_INSTANCE_URL ?: "https://test.salesforce.com"
     def toolbelt = tool 'sfdxtool'
 	def SFDC_USERNAME
+    
     // -------------------------------------------------------------------------
     // Check out code from source control
     // -------------------------------------------------------------------------
-
     stage('checkout source') {
         checkout scm
     }
