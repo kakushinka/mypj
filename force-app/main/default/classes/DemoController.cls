@@ -20,6 +20,8 @@ public with sharing class DemoController {
 
             //mod  by dev branch (class)
             //add by kaku branch!
+            //add by kaku branch2!
+            //add by kaku branch22!!
         }
     }
 
