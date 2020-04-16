@@ -2,9 +2,6 @@
   <!-- Page Header -->
   <apex:sectionHeader title="Contact Edit" subtitle="New SFDX Demo Member" />
   <apex:image value="http://bit.ly/17iLknp" styleClass="logo" />
-    
-    
-
   <!-- Begin Form -->
   <apex:form >
     <apex:pageBlock title="Rules of SFDX Demo" mode="edit">
