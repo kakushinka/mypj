@@ -11,6 +11,7 @@ private class DemoControllerTests {
         System.assertEquals(contact.Id, ApexPages.currentPage().getParameters().get('id'));
         
         //add by branch (class 2)
+        //add by branch　moreline (class 2)
     }
 
     @isTest static void testGetAppVersion() {
