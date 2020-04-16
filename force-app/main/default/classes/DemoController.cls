@@ -19,6 +19,7 @@ public with sharing class DemoController {
             ApexPages.currentPage().getParameters().put('id', theContact.Id);
 
             //mod  by dev branch (class)
+            //add by kaku branch!
         }
     }
 
