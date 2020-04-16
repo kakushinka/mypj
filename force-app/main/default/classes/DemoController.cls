@@ -18,7 +18,7 @@ public with sharing class DemoController {
             // this will set the Id, so now you can use the standard controller and just reference fields on the page
             ApexPages.currentPage().getParameters().put('id', theContact.Id);
 
-            //add by branch (class)
+            //mod  by dev branch (class)
         }
     }
 
